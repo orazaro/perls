@@ -1,0 +1,5 @@
+#$Id: pasties.txt,v 1.1 2010/04/21 12:26:26 oraz Exp $
+# code snippets on pastie.org
+
+brackets.pl: http://pastie.org/927673
+
