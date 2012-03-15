@@ -5,7 +5,8 @@
 
 int main()
 {
-    const int len = 3000;
+    const int len = 1000;
+    const int over = 5;
     using namespace std;
     srandom(time(NULL));
     vector<int> vec(len);
@@ -13,7 +14,7 @@ int main()
     int max = 0;
     
     for(int k = 0; true; ++k) {
-        for(int i = 0; i < len; ++i) {
+        for(int i = 0; i < len*over; ++i) {
             int j = random()%len;
             vec[j] += 1;
         }
