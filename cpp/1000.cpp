@@ -6,27 +6,29 @@
 int main()
 {
     const int len = 1000;
-    const int over = 5;
+    const int over = 3;
     using namespace std;
     srandom(time(NULL));
-    vector<int> vec(len+1);
+    vector<int> vec(len+over);
 
     int max = 0;
     
     for(int k = 0; true; ++k) {
-        for(int i = 0; i < len*over; ++i) {
+        for(int i = 0; i < len; ++i) {
             int j = random()%len;
-            vec[j] += 1;
-            vec[j+1] += 1;
+            for(int o = 0; o < over; o++)
+                vec[j+o] += 1;
         }
 
-        int ma = 0;
+        int ma = 0, sum = 0; 
         for(int i = 0; i < len; ++i) {
             if(vec[i] > ma) ma = vec[i];
+            sum += vec[i];
             vec[i] = 0;
         }
+        double av = (double)sum / len;
         if(ma > max) max = ma;
-        cout << k <<". Max=" << max << " max=" << ma  << endl;
+        cout << k <<". Max=" << max << " max=" << ma << " av=" << av << endl;
     }
 
     return 0;
