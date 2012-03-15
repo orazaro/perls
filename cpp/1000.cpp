@@ -9,7 +9,7 @@ int main()
     const int over = 5;
     using namespace std;
     srandom(time(NULL));
-    vector<int> vec(len);
+    vector<int> vec(len+1);
 
     int max = 0;
     
@@ -17,6 +17,7 @@ int main()
         for(int i = 0; i < len*over; ++i) {
             int j = random()%len;
             vec[j] += 1;
+            vec[j+1] += 1;
         }
 
         int ma = 0;
