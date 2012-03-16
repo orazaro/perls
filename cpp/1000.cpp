@@ -6,7 +6,8 @@
 int main()
 {
     const int len = 1000;
-    const int over = 3;
+    const int kreqs = 3;
+    const int over = 5;
     using namespace std;
     srandom(time(NULL));
     vector<int> vec(len+over);
@@ -14,7 +15,7 @@ int main()
     int max = 0;
     
     for(int k = 0; true; ++k) {
-        for(int i = 0; i < len; ++i) {
+        for(int i = 0; i < len*kreqs; ++i) {
             int j = random()%len;
             for(int o = 0; o < over; o++)
                 vec[j+o] += 1;
