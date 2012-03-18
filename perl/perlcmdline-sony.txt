@@ -1,0 +1,7 @@
+tail n1.stat080516.log |perl -lane 'if($F[2]=~/DATE(\d+)/){print scalar localtime($1)}'
+
+tail -f n1.stat080516.log |perl -lane 'next if($F[0]ne"CLICK");if($F[2]=~/DATE(\d+)/){print scalar localtime($1)," @F"}'
+
+[pacific.rambler.ru]$ cat BUID20392.0331|grep SHOW|perl -lane '$ip{$F[11]}++}END{$i=0;foreach (sort{$ip{$b}<=>$ip{$a}} keys %ip){$i++;last if $i>20;print "$ip{$_} $_"}'
+
+
