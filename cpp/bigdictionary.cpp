@@ -9,13 +9,13 @@ void make_big_dic(
     std::map< std::string, long >& dic,
     size_t size)
 {
-    std::string letters = std::string("aaaaaaaa");
+    std::string letters(8,'a');
     int len = letters.size();
     for(size_t i = 0; i < size; i++)
     {
         dic[letters] = i;
-        //std::cerr << letters << std::endl;
-        for(size_t j = len - 1; j > 0 ; j--)
+        std::cerr << letters << std::endl;
+        for(int j = len - 1; j >= 0 ; j--)
             if(letters[j] < 'z') 
             {
                 letters[j] += 1;
