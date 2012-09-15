@@ -24,4 +24,6 @@ oraz@orazh:~$ perl -le '@a=(1.3,1.7,1.3,0.92,1.3,0.9);map{$s+=$_}@a;$s/=@a;;map{
 x=1.23666666666667 +- 0.270903836977051
 # list most active hosts connected to current server:
 netstat -n|perl -lane 'if($F[4]=~/((\d+\.){4})/){print $1}'|sort|uniq -c|sort -n|tail -100
+# grep all current logs for selected pages
+for i in {1..6};do echo $i;ssh bsbot@rad0$i "cat stats/n$i.stat120719.log|grep \"PID8612\|PID8613\"|perl -lane '\$l=\$_;if(/DATE(\d+)/){if(\$1>1342704713){print\$l}}'" >>x;done
 #
